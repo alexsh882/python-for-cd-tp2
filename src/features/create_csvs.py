@@ -1,6 +1,7 @@
-from db_connection import get_db_instance
+from db.db_connection import get_db_instance
 import csv
 
+PATH_TO_EXPORT = "./data/processed/"
 
 def create_csv_from_database():
     db = get_db_instance().cursor()
@@ -20,7 +21,7 @@ def create_csv_from_database():
 def create_csv_province(province):
     db = get_db_instance()
     cur = db.cursor()
-    with open(f"data_exports/{province}.csv", "w", newline="") as file:
+    with open(f"{PATH_TO_EXPORT}{province}.csv", "w", newline="") as file:
         print(f"Creando csv de la provincia {province} con sus localidades.")
         try:
             writer = csv.writer(file)

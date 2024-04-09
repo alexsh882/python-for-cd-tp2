@@ -1,18 +1,19 @@
 import sqlite3
 import os
 
+PATH_FILE_DATABASE = "db/"
 FILE_DATABASE = "database.db"
 
 
 
 def create_connection_sqlite3(db_file=FILE_DATABASE):
 
-    if not os.path.exists(db_file):
+    if not os.path.exists(PATH_FILE_DATABASE+db_file):
         print("No existe la base de datos, se procede a crear el archivo.")
-        open(db_file, "w")
+        open(PATH_FILE_DATABASE+db_file, "w")
 
     try:
-        db = sqlite3.connect(db_file)
+        db = sqlite3.connect(PATH_FILE_DATABASE+db_file)
         print("Conexión exitosa a base de datos exitosa.")
         return db
     except sqlite3.Error as e:

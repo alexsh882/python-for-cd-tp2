@@ -1,7 +1,7 @@
-from read_data import read_csv
-from db_connection import get_db_instance, create_table_localities
+from src.features.read_data import read_csv
+from db.db_connection import get_db_instance
 
-PATH_CSV_LOCALITIES = "./localidades.csv"
+PATH_CSV_LOCALITIES = "./data/localidades.csv"
 
 
 def read_and_insert_csv_data_to_database():

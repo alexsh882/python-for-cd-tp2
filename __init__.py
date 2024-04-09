@@ -1,8 +1,8 @@
 import time
 
-from create_csvs import create_csv_from_database
-from db_connection import create_table_localities
-from seeders.insert_data_from_csv import read_and_insert_csv_data_to_database
+from db.db_connection import create_table_localities
+from src.features.create_csvs import create_csv_from_database
+from src.features.insert_data_from_csv import read_and_insert_csv_data_to_database
   
 
 def main():
